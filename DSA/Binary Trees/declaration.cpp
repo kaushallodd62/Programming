@@ -5,8 +5,13 @@ class Node {
         Node* left;
         Node* right;
 
+        Node() {
+            this->left = this->right = NULL;
+        }
+
         Node(int val) {
             this->data = val;
+            this->left = this->right = NULL;
         }
 };
 
