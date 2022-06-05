@@ -1,5 +1,5 @@
 #include<bits/stdc++.h>
-#include "declaration.cpp"
+#include "declaration.h"
 using namespace std;
 
 // searching for a node in a BST
