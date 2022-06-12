@@ -1,6 +1,7 @@
 #ifndef _LINKEDLIST_H
 #define _LINKEDLIST_H
 
+
 typedef enum {FAILURE, SUCCESS} statusCode;
 typedef enum {FALSE, TRUE} Bool;
 typedef int itemType;
@@ -8,6 +9,10 @@ typedef int itemType;
 typedef struct Node_tag{
     itemType data;
     struct Node_tag* next;
+    Node_tag(int val) {
+        data = val;
+        next = __null;
+    }
 }Node;
 
 //Inserts a node at the start of the linked list and returns status code (1 for SUCCESS and 0 for FAILURE).
