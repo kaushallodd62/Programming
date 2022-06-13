@@ -9,6 +9,9 @@ typedef int itemType;
 typedef struct Node_tag{
     itemType data;
     struct Node_tag* next;
+    Node_tag() {
+        next = __null;
+    }
     Node_tag(int val) {
         data = val;
         next = __null;
