@@ -17,6 +17,5 @@ Node* reverse(Node* head, int k) {
     if(curr != __null) {
         head->next = reverse(curr, k);
     }
-
     return prev;
 }
