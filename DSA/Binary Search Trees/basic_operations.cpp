@@ -75,30 +75,23 @@ Node* deleteNode(Node* root, int x) {
     else {
         // deleting an interior node (by replacing with successor node in in order traversal)
         if(root->left && root->right) {
-            Node* curr = root->right, *prev = root;
-            while(curr->left) {
-                prev = curr;
+            Node* curr = root->right;
+            while(curr->left)
                 curr = curr->left;
-            }
             root->data = curr->data;
-            if(prev != root)
-                prev->left = curr->right;
-            else
-                prev->right = curr->right;
-            delete(curr);
-            return root;
+            root->right = deleteNode(root->right, root->data);
         }
 
         // deleting a node with only one child
         else if(root->left)  {
             Node* temp = root->left;
             delete(root);
-            return temp;
+            root = temp;
         }
         else if(root->right) {
             Node* temp = root->right;
             delete(root);
-            return temp;
+            root = temp;
         }
 
        // deleing a leaf node

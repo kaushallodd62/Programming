@@ -6,13 +6,13 @@ class Node {
         int data, height;
         Node* left, *right;
         Node() {
-            height = 1;
             left = right = __null;
+            height = 1;
         }
         Node(int val) {
-            height = 1;
             left = right = __null;
             data = val;
+            height = 1;
         }
 };
 
