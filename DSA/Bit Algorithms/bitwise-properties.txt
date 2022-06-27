@@ -1,0 +1,18 @@
+ - a&b gives you 1 for all the bits where the corresponding bits of a and b are set.
+ - if a&b == 0, then no corresponding bits are set.
+ - odd numbers always has LSB == 1, even numbers always has LSB == 0.
+ - a&1 will give 1 for odd numbers and 0 for even numbers.
+ - a|b == a^b if a&b == 0
+ - a|b = a^b + a&b
+ - a+b = a|b (or a^b) when a&b == 0
+ - a+b = a|b + a&b
+ - a+b = a^b + (a&b << 1)
+ - b^b == 0
+ - (a^b)^b = a^(b^b) = a
+ - bit ^ 1 toggles the bit and bit ^ 0 remains bit unchanged.
+ - effect of even number of occurences of a number on accumulative XOR is nullified
+ - ~ (not operator) returns one's complement of a number. If the number is a signed int, it will reverse the MSB and give you a negative number. (remember negative number notation in binary using 2s compliment), else if number is unsigned int, it will give you a really big number.
+ - ~a -> one's complement (same as -a - 1)
+ - ~a+1 -> two's complement (same as -a)
+ - trick for finding two's complement is go right to left and don't change any bit till you encounter the first set bit (including that bit). compliment all bits on the left of this bit.
+ - (X-1) inverts all the bits in X till it encounters the lowest set bit and it also inverts that lowest set bit.
