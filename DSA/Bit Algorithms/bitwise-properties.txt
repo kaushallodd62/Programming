@@ -14,5 +14,7 @@
  - ~ (not operator) returns one's complement of a number. If the number is a signed int, it will reverse the MSB and give you a negative number. (remember negative number notation in binary using 2s compliment), else if number is unsigned int, it will give you a really big number.
  - ~a -> one's complement (same as -a - 1)
  - ~a+1 -> two's complement (same as -a)
- - trick for finding two's complement is go right to left and don't change any bit till you encounter the first set bit (including that bit). compliment all bits on the left of this bit.
- - (X-1) inverts all the bits in X till it encounters the lowest set bit and it also inverts that lowest set bit.
+ - ~X + 1 (-X) keeps all the bits in X unchanged from LSB upto the lowest set bit (inclusive). compliments all bits to the left
+ - (X-1) inverts all the bits in X from LSB upto the lowest set bit (inclusive). keeps all bits to the left unchanged.
+ - Therefore, -X = ~(X-1).
+ 
