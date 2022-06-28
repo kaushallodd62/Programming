@@ -28,7 +28,7 @@ int ones_compliment(int num) {
 
 // two's compliment
 int twos_compliment(int num) {
-    return ~num + 1;
+    return ~num + 1; // or return -n;
 }
 
 // stripping the lowest set bit
