@@ -42,3 +42,12 @@ int lowest_set_bit(int num) {
 }
 
 // you can divide and multiply by 2 by using right shift operator and left shift operator resp.
+
+void swap(int& a, int& b) {
+    if(a == b)
+        return;
+    a = a^b;
+    b = a^b;
+    a = a^b;
+}
+
