@@ -18,3 +18,8 @@
  - (X-1) inverts all the bits in X from LSB upto the lowest set bit (inclusive). keeps all bits to the left unchanged.
  - Therefore, -X = ~(X-1).
  
+ - Four important builtin functions of gcc compiler.
+ - __builtin_popcount(x) counts the number of set bits in x. __builtin_popcountl(x) and __builtin_popcountll(x) can be used for long and long long data types.
+ - __builtinparity(x) checks the parity of a number. return true is the number has odd parity else false. Parity refers to whether it contains an odd or even number of set bits in the number. Similarly, you can use __builtinparityl(x) and __builtinparityll(x).
+ - __builtin_ctz(x) returns the count of trailing zeros of the given number. Similarly, you can use __builtin_ctzl(x) and __builtin_ctzll(x).
+ - __builtin_clz(x) returns the count of leading zeros of the given number. Similarly, you can use __builtin_clzl(x) and __builtin_clzll(x). 

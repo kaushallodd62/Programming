@@ -2,7 +2,7 @@
 using namespace std;
 
 bool isPowerofTwo(long long n) {
-    return n > 0 && !(n & n-1);
+    return n && !(n & n-1);
 }
 
 // or you can also check the number of set bits and see if it is 1 only.

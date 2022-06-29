@@ -2,6 +2,7 @@
     "files.associations": {
         "random": "cpp",
         "regex": "cpp",
-        "span": "cpp"
+        "span": "cpp",
+        "ostream": "cpp"
     }
 }
