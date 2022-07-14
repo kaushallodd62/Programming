@@ -1,60 +1,54 @@
 #include<bits/stdc++.h>
-#include "declaration.cpp"
+#include "declaration.h"
 using namespace std;
 
-// pre order traversal (DFS)
-void preOrder(Node* root) {
-    if(root) {
+// preorder traversal (DFS)
+void preOrder (Node* root) {
+    if (root) {
         cout << root->data << " ";
-        preOrder(root->left);
-        preOrder(root->right);
+        preOrder (root->left);
+        preOrder (root->right);
     }
 }
 
-
-
-// in order traversal (DFS)
-void inOrder(Node* root) {
-    if(root) {
-        inOrder(root->left);
+// inorder traversal (DFS)
+void inOrderRec (Node* root) {
+    if (root) {
+        inOrderRec (root->left);
         cout << root->data << " ";
-        inOrder(root->right);
+        inOrderRec (root->right);
+    }
+}
+
+// postorder traversal (DFS)
+void postOrder (Node* root) {
+    if (root) {
+        postOrder (root->left);
+        postOrder (root->right);
+        cout << root->data << " ";
     }
 }
 
 // inorder traversal without recursion
-void inOrderIter(Node* root) {
-    stack<Node*> s;
-    Node* curr = root;
+void inOrderIter (Node *root) {
+    if (root == __null)
+        return;
 
-    while(curr || !s.empty()) {
-        while(curr) {
+    stack<Node *> s;
+    Node *curr = root;
+    while (!s.empty() || curr) {
+        if (curr) {
             s.push(curr);
             curr = curr->left;
         }
-        curr = s.top();
-        s.pop();
-
-        cout << curr->data << " ";
-
-        curr = curr->right;
+        else {
+            curr = s.top();
+            s.pop();
+            cout << curr->data << " ";
+            curr = curr->right;
+        }
     }
 }
-
-
-
-
-// post order traversal (DFS)
-void postOrder(Node* root) {
-    if(root) {
-        postOrder(root->left);
-        postOrder(root->right);
-        cout << root->data << " ";
-    }
-}
-
-
-
 
 // function to get the height of the tree
 int getHeightOfTree (Node *root) {
@@ -89,7 +83,7 @@ void levelOrder (Node *root) {
 }
 
 // level order traversal (BFS) [O(n) using queue]
-void levelOrderQ (Node* root) {
+void levelOrderIter (Node* root) {
     queue<Node*> q;
     q.push(root);
 

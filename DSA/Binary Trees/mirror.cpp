@@ -1,5 +1,5 @@
 #include<bits/stdc++.h>
-#include "declaration.cpp"
+#include "declaration.h"
 using namespace std;
 
 void inOrder (Node *root) {
