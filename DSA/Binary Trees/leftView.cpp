@@ -4,6 +4,7 @@ using namespace std;
 
 // print the first element in every level
 
+// VLR Traversal (preorder)
 void leftViewAux (Node *root, int level, int& maxLevel, vector<int>& res) {
     if (root == __null)
         return;
