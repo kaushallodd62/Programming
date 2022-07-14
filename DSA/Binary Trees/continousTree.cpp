@@ -4,38 +4,33 @@ using namespace std;
 
 // BFS Approach (iterative solution)
 bool continousTree(Node* root) {
-    if(root == NULL) {
+    if(root == NULL)
         return true;
-    }
-    else {
-        if(!root->left && !root->right)
-            return true;
-        else {
-            queue<Node*> q;
-            q.push(root);
 
-            Node* curr;
-            while(!q.empty()) {
-                curr = q.front();
-                q.pop();
+    if(!root->left && !root->right)
+        return true;
+    
+    queue<Node*> q;
+    q.push(root);
 
-                if(curr->left) {
-                    if(abs(curr->left->data - curr->data) != 1)
-                        return false;
-                    else
-                        q.push(curr->left);
-                }
-                if(curr->right) {
-                    if(abs(curr->right->data - curr->data) != 1)
-                        return false;
-                    else
-                        q.push(curr->right);
-                }
-            }
+    Node* curr;
+    while(!q.empty()) {
+        curr = q.front();
+        q.pop();
 
-            return true;
+        if(curr->left) {
+            if(abs(curr->left->data - curr->data) != 1)
+                return false;
+            q.push(curr->left);
+        }
+        if(curr->right) {
+            if(abs(curr->right->data - curr->data) != 1)
+                return false;
+            q.push(curr->right);
         }
     }
+
+    return true;
 }
 
 // DFS Approach (recursive solution)
@@ -49,17 +44,13 @@ bool continousTreeRec(Node* root) {
     if(root->left) {
         if(abs(root->data - root->left->data) != 1)
             return false;
-        else {
-            return continousTreeRec(root->left);
-        }
+        return continousTreeRec(root->left);
     }
 
     if(root->right) {
         if(abs(root->data - root->right->data) != 1)
             return false;
-        else {
-            return continousTreeRec(root->right);
-        }
+        return continousTreeRec(root->right);
     }
 }
 
