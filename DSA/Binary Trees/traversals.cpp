@@ -13,7 +13,6 @@ void preOrder(Node* root) {
 
 
 
-
 // in order traversal (DFS)
 void inOrder(Node* root) {
     if(root) {
@@ -90,7 +89,7 @@ void levelOrder (Node *root) {
 }
 
 // level order traversal (BFS) [O(n) using queue]
-void levelOrder(Node* root) {
+void levelOrderQ (Node* root) {
     queue<Node*> q;
     q.push(root);
 
