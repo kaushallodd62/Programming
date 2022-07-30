@@ -20,27 +20,10 @@ class Node {
         }
 };
 
-unordered_set<Node *> s;
-void cloneGraphAux (Node *node, Node *&clone) {
-    vector<Node*> neigbors;
-    s.insert (node);
-    clone->val = node->val;
-    for (auto it = node->neighbors.begin(); it < node->neighbors.end(); it++) {
-        if (s.find (*it) == s.end ()) {
-            clone->neighbors.push_back(*it);
-            cloneGraphAux (*it, *clone->neighbors.rbegin());
-        }
-    }
-}
-
-Node * cloneGraph (Node *node) {
-    Node *clone = new Node();
-    cloneGraphAux (node, clone);
-    return clone;
-}
-
 // BFS
 Node * cloneGraph (Node *node) {
+    if (node == __null)
+        return __null;
     queue <Node *> q;
     map <Node *, Node *> mp;
     Node *clone = new Node (node->val);
